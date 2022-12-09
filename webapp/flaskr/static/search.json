@@ -233,7 +233,7 @@
         }]
     },
         { 
-        "title": "environmental sensor study A", 
+        "title": "Environmental sensor study A", 
         "name": "environmental-sensor-study-revA",
         "description": "As a city planner, I want to identify the environmental sensor. This use case visualises specie and databases using Geopandas.",
         "tags": ["green space","greening","urban heat","green roofs","environmental","ecology","energy efficiency"],
