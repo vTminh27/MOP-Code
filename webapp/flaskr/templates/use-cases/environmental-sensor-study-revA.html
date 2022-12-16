@@ -19863,11 +19863,11 @@ all of MD as it is not optimized for dense, information rich UIs.
             <pre><code class="language-python hljs" data-lang="python"><span class="hljs-comment">##This notebook was created using python notebook with Jupyter Lab</span>
 <span class="hljs-comment">#Depending on how you are running this notebook you may need some of the following packages. Try running these if someparts of the notebook don't work for you!</span>
   <span class="hljs-comment">
-  # pip install sodapy
-  # pip install geopandas
-  # pip install rtree
-  # pip install pygeos
-  # pip install geopy
+# pip install sodapy
+# pip install geopandas
+# pip install rtree
+# pip install pygeos
+# pip install geopy
     
 #Issue with using folium through Jupyter notebook was resolved by downgrading markup safe as follows:</span>
       </code></pre>
@@ -19898,27 +19898,34 @@ all of MD as it is not optimized for dense, information rich UIs.
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
     <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
       <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="cm-s-jupyter">
-            <figure class="highlight">
-              <pre><code class="language-python hljs" data-lang="python"><span class="hljs-comment">#Details for City of Melbourne data on Socrata website.</span>                
-  <span class="">apptoken</span> <span class="">=</span> <span class="">os</span><span class="">.</span><span
-  class="">environ</span><span class="">.</span><span class="n">get</span><span class="p">(</span><span
-  class="s2">"bajmvQjws2C8yfqmVSkOtOU9L"</span><span class="p">)</span> <span class="c1"># App token created on Socratawebsite</span>
-  <span class="">domain</span> <span class="">=</span> <span class="hljs-string">"data.melbourne.vic.gov.au"</span>
-  <span class="">client</span> <span class="">=</span> <span class="">Socrata</span><span class="">(</span><span
-  class="">domain</span><span class="">,</span> <span class="n">apptoken</span><span class="p">)</span> <span
-  class="c1"># Open Dataset connection</span>
-                </code></pre>
-            </figure>
+        <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+        </div>
+        <div class="jp-InputArea jp-Cell-inputArea">
+          <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+    
+    
+          <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+            <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+              <span class="">Python</span>
+            </div>
+            <div class="cm-s-jupyter">
+              <figure class="highlight">
+                <pre><code class="language-python hljs" data-lang="python"><span class="hljs-comment">#Details for City of Melbourne data on Socrata website.                </span>
+      apptoken = os.environ.get(<span class="hljs-string">"bajmvQjws2C8yfqmVSkOtOU9L"</span>) <span class="hljs-comment"># App token created on Socratawebsite</span>
+      domain = <span class="hljs-string">"data.melbourne.vic.gov.au"</span>
+      client = Socrata(domain, apptoken) <span class="hljs-comment"># Open Dataset connection</span>
+    
+    
+    </code></pre>
+              </figure>
+            </div>
           </div>
         </div>
       </div>
+    
     </div>
+
 
   </div>
   <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -19954,28 +19961,40 @@ all of MD as it is not optimized for dense, information rich UIs.
     </div>
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="c1">#Loading Melbourne Microclimate Sensor Location data as a Geopandas Dataframe</span>
+<div class="jp-Cell-inputWrapper">
+  <div class="jp-InputArea jp-Cell-inputArea">
+    <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+    </div>
+    <div class="jp-InputArea jp-Cell-inputArea">
+      <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 
-<span class="n">dataresource</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'irqv-hjr4'</span><span class="p">)</span>
 
-<span class="c1"># Retrieve data from Microclimate Sensor Locations dataset. </span>
-<span class="n">sensor_locations</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">dataresource</span><span class="p">)</span>
-<span class="n">sensor_locations</span>
-</pre>
-            </div>
+      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+          <span class="">Python</span>
+        </div>
+        <div class="cm-s-jupyter">
+          <figure class="highlight">
+            <pre><code class="language-python hljs" data-lang="python">
 
-          </div>
+<span class="hljs-comment">#Loading Melbourne Microclimate Sensor Location data as a Geopandas Dataframe</span>
+
+<span class="">dataresource</span> <span class="">=</span> <span class="">client</span><span class="">.</span><span class="">get</span><span class="">(</span><span class="hljs-comment">'irqv-hjr4'</span><span class="">)</span>
+
+<span class="hljs-comment"># Retrieve data from the Microclimate Sensor Locations dataset. </span>
+<span class="">sensor_locations</span> <span class="">=</span> <span class="">gpd</span><span class="">.</span><span class="">GeoDataFrame</span><span class="">.</span><span class="">from_dict</span><span class="">(</span><span class="">dataresource</span><span class="">)</span>
+<span class="">sensor_locations</span>
+
+
+</code></pre>
+          </figure>
         </div>
       </div>
     </div>
+  </div>
+
+</div>
+
 
   </div>
   <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -19999,54 +20018,65 @@ all of MD as it is not optimized for dense, information rich UIs.
     </div>
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="c1">########### Python 3.2 #############</span>
-<span class="kn">import</span> <span class="nn">http.client</span><span class="o">,</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">urllib.parse</span><span class="o">,</span> <span class="nn">urllib.error</span><span class="o">,</span> <span class="nn">base64</span>
+<div class="jp-Cell-inputWrapper">
+  <div class="jp-InputArea jp-Cell-inputArea">
+    <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+    </div>
+    <div class="jp-InputArea jp-Cell-inputArea">
+      <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="c1"># Request headers</span>
-    <span class="s1">'X-TransactionID'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-    <span class="s1">'X-TrackingID'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-    <span class="s1">'X-SessionID'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-    <span class="s1">'X-CreationTime'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-    <span class="s1">'X-InitialSystem'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-    <span class="s1">'X-InitialComponent'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-    <span class="s1">'X-InitialOperation'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-    <span class="s1">'X-API-Key'</span><span class="p">:</span> <span class="s1">'4d234668273941a4ac2867c2dda06c2e'</span><span class="p">,</span>              <span class="c1">#API Key is for a personal account created on the EPA website. As no sensitive information is involved it is ok to share here. </span>
-<span class="p">}</span>
 
-<span class="n">params</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span><span class="p">({</span>
-    <span class="c1"># Request parameters</span>
-    <span class="s1">'since'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-    <span class="s1">'until'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-    <span class="s1">'interval'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-<span class="p">})</span>
+      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+          <span class="">Python</span>
+        </div>
+        <div class="cm-s-jupyter">
+          <figure class="highlight">
+            <pre><code class="language-python hljs" data-lang="python">
 
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s1">'gateway.api.epa.vic.gov.au'</span><span class="p">)</span>
-    <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"/environmentMonitoring/v1/sites/4afe6adc-cbac-4bf1-afbe-ff98d59564f9/parameters?</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">params</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"[Errno </span><span class="si">{0}</span><span class="s2">] </span><span class="si">{1}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">errno</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">strerror</span><span class="p">))</span>
+<span class="hljs-comment">########### Python 3.2 #############</span>
+<span class="hljs-keyword">import</span> <span class="">http.client</span><span class="">,</span> <span class="">urllib.request</span><span class="">,</span> <span class="">urllib.parse</span><span class="">,</span> <span class="">urllib.error</span><span class="">,</span> <span class="">base64</span>
 
-<span class="c1">####################################</span>
-</pre>
-            </div>
+<span class="">headers</span> <span class="">=</span> <span class="">{</span>
+    <span class="hljs-comment"># Request headers</span>
+    <span class="hljs-comment">'X-TransactionID'</span><span class="">:</span> <span class="hljs-comment">''</span><span class="">,</span>
+    <span class="hljs-comment">'X-TrackingID'</span><span class="">:</span> <span class="hljs-comment">''</span><span class="">,</span>
+    <span class="hljs-comment">'X-SessionID'</span><span class="">:</span> <span class="hljs-comment">''</span><span class="">,</span>
+    <span class="hljs-comment">'X-CreationTime'</span><span class="">:</span> <span class="hljs-comment">''</span><span class="">,</span>
+    <span class="hljs-comment">'X-InitialSystem'</span><span class="">:</span> <span class="hljs-comment">''</span><span class="">,</span>
+    <span class="hljs-comment">'X-InitialComponent'</span><span class="">:</span> <span class="hljs-comment">''</span><span class="">,</span>
+    <span class="hljs-comment">'X-InitialOperation'</span><span class="">:</span> <span class="hljs-comment">''</span><span class="">,</span>
+    <span class="hljs-comment">'X-API-Key'</span><span class="">:</span> <span class="hljs-comment">'4d234668273941a4ac2867c2dda06c2e'</span><span class="">,</span>              <span class="hljs-comment">#API Key is for a personal account created on the EPA website. As no sensitive information is involved it is ok to share here. </span>
+<span class="">}</span>
 
-          </div>
+<span class="">params</span> <span class="">=</span> <span class="">urllib</span><span class="">.</span><span class="">parse</span><span class="">.</span><span class="">urlencode</span><span class="">({</span>
+    <span class="hljs-comment"># Request parameters</span>
+    <span class="hljs-comment">'since'</span><span class="">:</span> <span class="hljs-comment">''</span><span class="">,</span>
+    <span class="hljs-comment">'until'</span><span class="">:</span> <span class="hljs-comment">''</span><span class="">,</span>
+    <span class="hljs-comment">'interval'</span><span class="">:</span> <span class="hljs-comment">''</span><span class="">,</span>
+<span class="">})</span>
+
+<span class="k">try</span><span class="">:</span>
+    <span class="">conn</span> <span class="">=</span> <span class="">http</span><span class="">.</span><span class="">client</span><span class="">.</span><span class="">HTTPSConnection</span><span class="">(</span><span class="hljs-comment">'gateway.api.epa.vic.gov.au'</span><span class="">)</span>
+    <span class="">conn</span><span class="">.</span><span class="">request</span><span class="">(</span><span class="hljs-string">"GET"</span><span class="">,</span> <span class="hljs-string">"/environmentMonitoring/v1/sites/4afe6adc-cbac-4bf1-afbe-ff98d59564f9/parameters?</span><span class="si">%s</span><span class="hljs-string">"</span> <span class="">%</span> <span class="">params</span><span class="">,</span> <span class="hljs-string">""</span><span class="">,</span> <span class="">headers</span><span class="">)</span>
+    <span class="">response</span> <span class="">=</span> <span class="">conn</span><span class="">.</span><span class="">getresponse</span><span class="">()</span>
+    <span class="">data</span> <span class="">=</span> <span class="">response</span><span class="">.</span><span class="">read</span><span class="">()</span>
+    <span class="nb">print</span><span class="">(</span><span class="">data</span><span class="">)</span>
+    <span class="">conn</span><span class="">.</span><span class="">close</span><span class="">()</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="">e</span><span class="">:</span>
+    <span class="nb">print</span><span class="">(</span><span class="hljs-string">"[Errno </span><span class="si">{0}</span><span class="hljs-string">] </span><span class="si">{1}</span><span class="hljs-string">"</span><span class="">.</span><span class="">format</span><span class="">(</span><span class="">e</span><span class="">.</span><span class="">errno</span><span class="">,</span> <span class="">e</span><span class="">.</span><span class="">strerror</span><span class="">))</span>
+
+<span class="hljs-comment">####################################</span>
+
+</code></pre>
+          </figure>
         </div>
       </div>
     </div>
+  </div>
+
+</div>
+
 
   </div>
   <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -20067,25 +20097,36 @@ all of MD as it is not optimized for dense, information rich UIs.
     </div>
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="jp-Cell-inputWrapper">
+  <div class="jp-InputArea jp-Cell-inputArea">
+    <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+    </div>
+    <div class="jp-InputArea jp-Cell-inputArea">
+      <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 
-<span class="n">jsonResponse</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">jsonResponse</span>
-</pre>
-            </div>
 
-          </div>
+      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+          <span class="">Python</span>
+        </div>
+        <div class="cm-s-jupyter">
+          <figure class="highlight">
+            <pre><code class="language-python hljs" data-lang="python">
+
+<span class="hljs-keyword">import</span> <span class="">json</span>
+
+<span class="">jsonResponse</span> <span class="">=</span> <span class="">json</span><span class="">.</span><span class="">loads</span><span class="">(</span><span class="">data</span><span class="">)</span>
+<span class="">jsonResponse</span>
+
+</code></pre>
+          </figure>
         </div>
       </div>
     </div>
+  </div>
+
+</div>
+
 
   </div>
   <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -20105,22 +20146,31 @@ all of MD as it is not optimized for dense, information rich UIs.
     </div>
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="n">sensor_locations</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">sensor_locations</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'EPA'</span><span class="p">,</span> <span class="s1">'Null'</span><span class="p">,</span> <span class="s1">'Null'</span><span class="p">,</span> <span class="s1">'Null'</span><span class="p">,</span> <span class="s1">'Null'</span><span class="p">,</span> <span class="mf">144.97</span><span class="p">,</span> <span class="o">-</span><span class="mf">37.8073959</span><span class="p">,</span> <span class="s2">"{'type': 'Point', 'coordinates': [-37.8073959, 144.97]}"</span><span class="p">,</span> <span class="s1">'Null'</span><span class="p">]</span>
-</pre>
-            </div>
+<div class="jp-Cell-inputWrapper">
+  <div class="jp-InputArea jp-Cell-inputArea">
+    <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+    </div>
+    <div class="jp-InputArea jp-Cell-inputArea">
+      <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 
-          </div>
+
+      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+          <span class="">Python</span>
+        </div>
+        <div class="cm-s-jupyter">
+          <figure class="highlight">
+            <pre><code class="language-python hljs" data-lang="python">
+
+<span class="">sensor_locations</span><span class="">.</span><span class="">loc</span><span class="">[</span><span class="nb">len</span><span class="">(</span><span class="">sensor_locations</span><span class="">.</span><span class="">index</span><span class="">)]</span> <span class="">=</span> <span class="">[</span><span class="hljs-comment">'EPA'</span><span class="">,</span> <span class="hljs-comment">'Null'</span><span class="">,</span> <span class="hljs-comment">'Null'</span><span class="">,</span> <span class="hljs-comment">'Null'</span><span class="">,</span> <span class="hljs-comment">'Null'</span><span class="">,</span> <span class="mf">144.97</span><span class="">,</span> <span class="">-</span><span class="mf">37.8073959</span><span class="">,</span> <span class="hljs-string">"{'type': 'Point', 'coordinates': [-37.8073959, 144.97]}"</span><span class="">,</span> <span class="hljs-comment">'Null'</span><span class="">]</span>
+</code></pre>
+          </figure>
         </div>
       </div>
     </div>
+  </div>
+
+</div>
 
   </div>
   <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -20139,29 +20189,49 @@ all of MD as it is not optimized for dense, information rich UIs.
       </div>
     </div>
   </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
+<div class="jp-Cell-inputWrapper">
+   <div class="jp-InputArea jp-Cell-inputArea">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
       </div>
       <div class="jp-InputArea jp-Cell-inputArea">
         <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+
+
         <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="n">sensor_locations</span><span class="p">[</span><span class="s1">'Address'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">" "</span>  
-
-<span class="c1">#This creates an empty column called 'Address' at the end of the dataframe. </span>
-
-<span class="c1">#Creating an empty column in the dataframe allows it to be iterated over using the iterrows method.</span>
-</pre>
-            </div>
-
+          <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+<span class="">Python</span>
           </div>
+          <div class="cm-s-jupyter">
+          <figure class="highlight">
+            <pre><code class="language-python hljs" data-lang="python">
+
+<span class="">sensor_locations</span><span class="">[</span><span class="hljs-comment">'Address'</span><span class="">]</span> <span class="">=</span> <span class="hljs-string">" "</span>  
+
+<span class="hljs-comment">#This creates an empty column called 'Address' at the end of the dataframe. </span>
+
+<span class="hljs-comment">#Creating an empty column in the dataframe allows it to be iterated over using the iterrows method. </span>
+<span class="hljs-keyword">from</span> <span class="">shapely.geometry</span> <span class="hljs-keyword">import</span> <span class="">Point</span>
+
+<span class="hljs-comment">#The following code iterates over the rows in the dataframe, calling the reverse geocode method on each row and adding the resulting information to the 'address' column.</span>
+<span class="k">for</span> <span class="">index</span><span class="">,</span> <span class="">row</span> <span class="ow">in</span> <span class="">sensor_locations</span><span class="">.</span><span class="">iterrows</span><span class="">():</span>
+    <span class="">sensor_locations</span><span class="">[</span><span class="hljs-comment">'Address'</span><span class="">]</span><span class="">.</span><span class="">iloc</span><span class="">[[</span><span class="">index</span><span class="">]]</span> <span class="">=</span> <span class="">gpd</span><span class="">.</span><span class="">tools</span><span class="">.</span><span class="">reverse_geocode</span><span class="">([</span><span class="">Point</span><span class="">(</span><span class="nb">float</span><span class="">(</span><span class="">row</span><span class="">[</span><span class="hljs-comment">'longitude'</span><span class="">]),</span> <span class="nb">float</span><span class="">(</span><span class="">row</span><span class="">[</span><span class="hljs-comment">'latitude'</span><span class="">]))])[</span><span class="hljs-comment">'address'</span><span class="">]</span>
+
+<span class="hljs-comment"># pd.set_option('display.max_colwidth', None)    #Setting this value ensures the addresses aren't abbreviated in the notebook, enabling them to be read. </span>
+
+<span class="nb">print</span><span class="">(</span><span class="">sensor_locations</span><span class="">[</span><span class="hljs-comment">'Address'</span><span class="">])</span>
+
+
+</code></pre>
+          </figure>
+        </div>
         </div>
       </div>
     </div>
 
   </div>
+
+
+
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
     <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -20169,57 +20239,6 @@ all of MD as it is not optimized for dense, information rich UIs.
       <div class="jp-InputArea jp-Cell-inputArea">
         <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
         <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
-
-<span class="c1">#The following code iterates over the rows in the dataframe, calling the reverse geocode method on each row and adding the resulting information to the 'address' column.</span>
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sensor_locations</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">sensor_locations</span><span class="p">[</span><span class="s1">'Address'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="n">index</span><span class="p">]]</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">reverse_geocode</span><span class="p">([</span><span class="n">Point</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">'longitude'</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">'latitude'</span><span class="p">]))])[</span><span class="s1">'address'</span><span class="p">]</span>
-</pre>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="c1"># pd.set_option('display.max_colwidth', None)    #Setting this value ensures the addresses aren't abbreviated in the notebook, enabling them to be read. </span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">sensor_locations</span><span class="p">[</span><span class="s1">'Address'</span><span class="p">])</span>
-</pre>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="n">sensor_locations</span>
-</pre>
-            </div>
-
-          </div>
         </div>
       </div>
     </div>
@@ -20244,49 +20263,60 @@ all of MD as it is not optimized for dense, information rich UIs.
     </div>
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="c1"># Create (f)igure and base (m)ap with style and zoom level.</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">37.81368709240999</span><span class="p">,</span> <span class="mf">144.95738102347036</span><span class="p">],</span> <span class="n">tiles</span> <span class="o">=</span> <span class="s1">'CartoDB positron'</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>  <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<div class="jp-Cell-inputWrapper">
+  <div class="jp-InputArea jp-Cell-inputArea">
+    <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+    </div>
+    <div class="jp-InputArea jp-Cell-inputArea">
+      <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 
-<span class="c1"># Feature Group for potential locations layer.</span>
-<span class="n">pl</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">FeatureGroup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Sensor Locations"</span><span class="p">)</span>
 
-<span class="c1"># Add potential locations and popup information (Location Number, Street View facing proposed area) to Feature Group.</span>
-<span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="n">sensor_locations</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span>
-        <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
-            <span class="n">location</span> <span class="o">=</span> <span class="p">[</span><span class="n">sensor</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">'latitude'</span><span class="p">],</span> <span class="n">sensor</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">'longitude'</span><span class="p">]],</span>
-            <span class="n">popup</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"&lt;b&gt;Environmental&amp;nbspSensor&lt;/b&gt;&lt;br&gt;ID:&amp;nbsp;"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sensor</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">'site_id'</span><span class="p">])</span><span class="o">+</span><span class="s2">"&lt;br&gt;Address:&amp;nbsp"</span><span class="o">+</span><span class="n">sensor</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">'Address'</span><span class="p">]),</span>
-            <span class="n">icon</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Icon</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s1">'blue'</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s2">"cloud"</span><span class="p">)</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
+      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+          <span class="">Python</span>
+        </div>
+        <div class="cm-s-jupyter">
+          <figure class="highlight">
+            <pre><code class="language-python hljs" data-lang="python">
+
+<span class="hljs-comment"># Create (f)igure and base (m)ap with style and zoom level.</span>
+<span class="">f</span> <span class="">=</span> <span class="">folium</span><span class="">.</span><span class="">Figure</span><span class="">(</span><span class="">width</span><span class="">=</span><span class="hljs-number">800</span><span class="">,</span> <span class="">height</span><span class="">=</span><span class="hljs-number">600</span><span class="">)</span>
+<span class="">m</span> <span class="">=</span> <span class="">folium</span><span class="">.</span><span class="">Map</span><span class="">(</span><span class="">location</span><span class="">=</span><span class="">[</span><span class="">-</span><span class="mf">37.81368709240999</span><span class="">,</span> <span class="mf">144.95738102347036</span><span class="">],</span> <span class="">tiles</span> <span class="">=</span> <span class="hljs-comment">'CartoDB positron'</span><span class="">,</span> <span class="">zoom_start</span><span class="">=</span><span class="hljs-number">14</span><span class="">,</span>  <span class="">width</span><span class="">=</span><span class="hljs-number">800</span><span class="">,</span> <span class="">height</span><span class="">=</span><span class="hljs-number">600</span><span class="">)</span>
+
+<span class="hljs-comment"># Feature Group for potential locations layer.</span>
+<span class="">pl</span> <span class="">=</span> <span class="">folium</span><span class="">.</span><span class="">FeatureGroup</span><span class="">(</span><span class="">name</span><span class="">=</span><span class="hljs-string">"Sensor Locations"</span><span class="">)</span>
+
+<span class="hljs-comment"># Add potential locations and popup information (Location Number, Street View facing proposed area) to Feature Group.</span>
+<span class="k">for</span> <span class="">sensor</span> <span class="ow">in</span> <span class="">sensor_locations</span><span class="">.</span><span class="">iterrows</span><span class="">():</span>
+    <span class="">pl</span><span class="">.</span><span class="">add_child</span><span class="">(</span>
+        <span class="">folium</span><span class="">.</span><span class="">Marker</span><span class="">(</span>
+            <span class="">location</span> <span class="">=</span> <span class="">[</span><span class="">sensor</span><span class="">[</span><span class="hljs-number">1</span><span class="">][</span><span class="hljs-comment">'latitude'</span><span class="">],</span> <span class="">sensor</span><span class="">[</span><span class="hljs-number">1</span><span class="">][</span><span class="hljs-comment">'longitude'</span><span class="">]],</span>
+            <span class="">popup</span> <span class="">=</span> <span class="">(</span><span class="hljs-string">"&lt;b&gt;Environmental&amp;nbspSensor&lt;/b&gt;&lt;br&gt;ID:&amp;nbsp;"</span> <span class="">+</span> <span class="nb">str</span><span class="">(</span><span class="">sensor</span><span class="">[</span><span class="hljs-number">1</span><span class="">][</span><span class="hljs-comment">'site_id'</span><span class="">])</span><span class="">+</span><span class="hljs-string">"&lt;br&gt;Address:&amp;nbsp"</span><span class="">+</span><span class="">sensor</span><span class="">[</span><span class="hljs-number">1</span><span class="">][</span><span class="hljs-comment">'Address'</span><span class="">]),</span>
+            <span class="">icon</span> <span class="">=</span> <span class="">folium</span><span class="">.</span><span class="">Icon</span><span class="">(</span><span class="">color</span> <span class="">=</span> <span class="hljs-comment">'blue'</span><span class="">,</span> <span class="">icon</span><span class="">=</span><span class="hljs-string">"cloud"</span><span class="">)</span>
+        <span class="">)</span>
+    <span class="">)</span>
 
     
-<span class="c1"># Add potential locations feature group to map.</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span>
+<span class="hljs-comment"># Add potential locations feature group to map.</span>
+<span class="">m</span><span class="">.</span><span class="">add_child</span><span class="">(</span><span class="">pl</span><span class="">)</span>
 
-<span class="c1"># Add layer cocntrol to map.</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">folium</span><span class="o">.</span><span class="n">LayerControl</span><span class="p">())</span>
+<span class="hljs-comment"># Add layer cocntrol to map.</span>
+<span class="">m</span><span class="">.</span><span class="">add_child</span><span class="">(</span><span class="">folium</span><span class="">.</span><span class="">LayerControl</span><span class="">())</span>
 
-<span class="c1">#Add map to figure</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="hljs-comment">#Add map to figure</span>
+<span class="">m</span><span class="">.</span><span class="">add_to</span><span class="">(</span><span class="">f</span><span class="">)</span>
 
-<span class="n">f</span>
-</pre>
-            </div>
+<span class="">f</span>
 
-          </div>
+</code></pre>
+          </figure>
         </div>
       </div>
     </div>
+  </div>
+
+</div>
+
 
   </div>
   <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -20341,240 +20371,144 @@ all of MD as it is not optimized for dense, information rich UIs.
       </div>
     </div>
   </div>
+ 
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="c1">#Loading Melbourne Road Corridor and Footpath Datasets as a Geopandas dataframes.</span>
-
-<span class="n">roaddata</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'wzzt-avwf'</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">)</span> 
-
-<span class="n">road_corridors</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">roaddata</span><span class="p">)</span>
-
-<span class="n">road_corridors</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="n">footpathdata</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'5che-qtdy'</span><span class="p">,</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">)</span>
-
-<span class="n">footpaths</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">footpathdata</span><span class="p">)</span>
-<span class="n">footpaths</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre>
-            </div>
-
-          </div>
-        </div>
-      </div>
+<div class="jp-Cell-inputWrapper">
+  <div class="jp-InputArea jp-Cell-inputArea">
+    <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
     </div>
+    <div class="jp-InputArea jp-Cell-inputArea">
+      <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 
-  </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="c1"># Dataset Sources:</span>
 
-<span class="c1"># https://data.melbourne.vic.gov.au/Transport/Road-corridors/9mdh-8yau</span>
-<span class="c1"># https://data.melbourne.vic.gov.au/City-Council/Footpaths/tqjk-32d9</span>
+      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+          <span class="">Python</span>
+        </div>
+        <div class="cm-s-jupyter">
+          <figure class="highlight">
+            <pre><code class="language-python hljs" data-lang="python">
 
-<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
-<span class="kn">import</span> <span class="nn">json</span>
+<span class="hljs-comment">#Loading Melbourne Road Corridor and Footpath Datasets as a Geopandas dataframes.</span>
 
-<span class="n">roadsgeoJSON_Id</span> <span class="o">=</span> <span class="s1">'wzzt-avwf'</span>
+<span class="">roaddata</span> <span class="">=</span> <span class="">client</span><span class="">.</span><span class="">get</span><span class="">(</span><span class="hljs-comment">'wzzt-avwf'</span><span class="">,</span> <span class="">limit</span> <span class="">=</span> <span class="hljs-number">10000</span><span class="">)</span> 
 
-<span class="c1">#Call the API</span>
-<span class="n">roadsGeoJSONURL</span> <span class="o">=</span> <span class="s1">'https://'</span><span class="o">+</span><span class="n">domain</span><span class="o">+</span><span class="s1">'/api/geospatial/'</span><span class="o">+</span><span class="n">roadsgeoJSON_Id</span><span class="o">+</span><span class="s1">'?method=export&amp;format=GeoJSON'</span>
-<span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">roadsGeoJSONURL</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
-    <span class="n">roadsegments</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="">road_corridors</span> <span class="">=</span> <span class="">gpd</span><span class="">.</span><span class="">GeoDataFrame</span><span class="">.</span><span class="">from_records</span><span class="">(</span><span class="">roaddata</span><span class="">)</span>
+
+<span class="">road_corridors</span><span class="">.</span><span class="">head</span><span class="">()</span>
+<span class="">footpathdata</span> <span class="">=</span> <span class="">client</span><span class="">.</span><span class="">get</span><span class="">(</span><span class="hljs-comment">'5che-qtdy'</span><span class="">,</span><span class="">limit</span> <span class="">=</span> <span class="hljs-number">10000</span><span class="">)</span>
+
+<span class="">footpaths</span> <span class="">=</span> <span class="">gpd</span><span class="">.</span><span class="">GeoDataFrame</span><span class="">.</span><span class="">from_records</span><span class="">(</span><span class="">footpathdata</span><span class="">)</span>
+<span class="">footpaths</span><span class="">.</span><span class="">head</span><span class="">()</span>
+<span class="hljs-comment"># Dataset Sources:</span>
+
+<span class="hljs-comment"># https://data.melbourne.vic.gov.au/Transport/Road-corridors/9mdh-8yau</span>
+<span class="hljs-comment"># https://data.melbourne.vic.gov.au/City-Council/Footpaths/tqjk-32d9</span>
+
+<span class="hljs-keyword">from</span> <span class="">urllib.request</span> <span class="hljs-keyword">import</span> <span class="">urlopen</span>
+<span class="hljs-keyword">import</span> <span class="">json</span>
+
+<span class="">roadsgeoJSON_Id</span> <span class="">=</span> <span class="hljs-comment">'wzzt-avwf'</span>
+
+<span class="hljs-comment">#Call the API</span>
+<span class="">roadsGeoJSONURL</span> <span class="">=</span> <span class="hljs-comment">'https://'</span><span class="">+</span><span class="">domain</span><span class="">+</span><span class="hljs-comment">'/api/geospatial/'</span><span class="">+</span><span class="">roadsgeoJSON_Id</span><span class="">+</span><span class="hljs-comment">'?method=export&amp;format=GeoJSON'</span>
+<span class="k">with</span> <span class="">urlopen</span><span class="">(</span><span class="">roadsGeoJSONURL</span><span class="">)</span> <span class="k">as</span> <span class="">response</span><span class="">:</span>
+    <span class="">roadsegments</span> <span class="">=</span> <span class="">json</span><span class="">.</span><span class="">load</span><span class="">(</span><span class="">response</span><span class="">)</span>
     
 
-<span class="c1">#Calling the response to observe the JSON file structure.</span>
-<span class="n">roadsegments</span><span class="p">[</span><span class="s2">"features"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'properties'</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-</pre>
-            </div>
+<span class="hljs-comment">#Calling the response to observe the JSON file structure.</span>
+<span class="">roadsegments</span><span class="">[</span><span class="hljs-string">"features"</span><span class="">][</span><span class="hljs-number">0</span><span class="">][</span><span class="hljs-comment">'properties'</span><span class="">]</span><span class="">.</span><span class="">keys</span><span class="">()</span>
+<span class="">footpathsgeoJSON_Id</span> <span class="">=</span> <span class="hljs-comment">'5che-qtdy'</span>
 
-          </div>
-        </div>
-      </div>
-    </div>
+<span class="hljs-comment">#Call the API</span>
+<span class="">footpathsGeoJSONURL</span> <span class="">=</span> <span class="hljs-comment">'https://'</span><span class="">+</span><span class="">domain</span><span class="">+</span><span class="hljs-comment">'/api/geospatial/'</span><span class="">+</span><span class="">footpathsgeoJSON_Id</span><span class="">+</span><span class="hljs-comment">'?method=export&amp;format=GeoJSON'</span>
+<span class="k">with</span> <span class="">urlopen</span><span class="">(</span><span class="">footpathsGeoJSONURL</span><span class="">)</span> <span class="k">as</span> <span class="">response</span><span class="">:</span>
+    <span class="">footpathsegments</span> <span class="">=</span> <span class="">json</span><span class="">.</span><span class="">load</span><span class="">(</span><span class="">response</span><span class="">)</span>    
 
-  </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="n">footpathsgeoJSON_Id</span> <span class="o">=</span> <span class="s1">'5che-qtdy'</span>
+<span class="hljs-comment">#Calling the response to observe the JSON file structure.</span>
+<span class="">footpathsegments</span><span class="">[</span><span class="hljs-string">"features"</span><span class="">][</span><span class="hljs-number">0</span><span class="">][</span><span class="hljs-comment">'properties'</span><span class="">]</span><span class="">.</span><span class="">keys</span><span class="">()</span>
+<span class="hljs-comment">#Getting the road data.</span>
+<span class="">dataresource</span> <span class="">=</span> <span class="">client</span><span class="">.</span><span class="">get</span><span class="">(</span><span class="hljs-comment">'wzzt-avwf'</span><span class="">,</span> <span class="">limit</span> <span class="">=</span> <span class="hljs-number">10000</span><span class="">)</span> 
 
-<span class="c1">#Call the API</span>
-<span class="n">footpathsGeoJSONURL</span> <span class="o">=</span> <span class="s1">'https://'</span><span class="o">+</span><span class="n">domain</span><span class="o">+</span><span class="s1">'/api/geospatial/'</span><span class="o">+</span><span class="n">footpathsgeoJSON_Id</span><span class="o">+</span><span class="s1">'?method=export&amp;format=GeoJSON'</span>
-<span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">footpathsGeoJSONURL</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
-    <span class="n">footpathsegments</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>    
+<span class="hljs-comment"># Retrieving data from road corridors dataset. </span>
 
-<span class="c1">#Calling the response to observe the JSON file structure.</span>
-<span class="n">footpathsegments</span><span class="p">[</span><span class="s2">"features"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'properties'</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-</pre>
-            </div>
+<span class="">road_corridors</span> <span class="">=</span> <span class="">gpd</span><span class="">.</span><span class="">GeoDataFrame</span><span class="">.</span><span class="">from_records</span><span class="">(</span><span class="">dataresource</span><span class="">)</span>
 
-          </div>
-        </div>
-      </div>
-    </div>
+<span class="hljs-comment">#Adding a geometry column using shapeleys shape method. This enables the geodataframe to be manipulated and plotted. </span>
+<span class="">road_corridors</span><span class="">[</span><span class="hljs-comment">'geometry'</span><span class="">]</span> <span class="">=</span> <span class="">[</span><span class="">shape</span><span class="">(</span><span class="">i</span><span class="">)</span> <span class="k">for</span> <span class="">i</span> <span class="ow">in</span> <span class="">road_corridors</span><span class="">[</span><span class="hljs-comment">'the_geom'</span><span class="">]]</span>
 
-  </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="c1">#Getting the road data.</span>
-<span class="n">dataresource</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'wzzt-avwf'</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">)</span> 
+<span class="hljs-comment">#Setting coordinate reference system (CRS) for the format of the data (WGS84)</span>
+<span class="">road_corridors</span><span class="">.</span><span class="">crs</span> <span class="">=</span> <span class="hljs-string">"EPSG:4326"</span>
+<span class="hljs-comment">#Getting the footpath data.</span>
+<span class="">dataresource</span> <span class="">=</span> <span class="">client</span><span class="">.</span><span class="">get</span><span class="">(</span><span class="hljs-comment">'5che-qtdy'</span><span class="">,</span> <span class="">limit</span> <span class="">=</span> <span class="hljs-number">10000</span><span class="">)</span> 
 
-<span class="c1"># Retrieving data from road corridors dataset. </span>
+<span class="hljs-comment"># Retrieve data from footpath corridors dataset.</span>
+<span class="">footpath_corridors</span> <span class="">=</span> <span class="">gpd</span><span class="">.</span><span class="">GeoDataFrame</span><span class="">.</span><span class="">from_records</span><span class="">(</span><span class="">dataresource</span><span class="">)</span>
 
-<span class="n">road_corridors</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">dataresource</span><span class="p">)</span>
+<span class="hljs-comment">#Adding a geometry column using shapeleys shape method. This enables the geodataframe to be manipulated and plotted.</span>
+<span class="">footpath_corridors</span><span class="">[</span><span class="hljs-comment">'geometry'</span><span class="">]</span> <span class="">=</span> <span class="">[</span><span class="">shape</span><span class="">(</span><span class="">i</span><span class="">)</span> <span class="k">for</span> <span class="">i</span> <span class="ow">in</span> <span class="">footpath_corridors</span><span class="">[</span><span class="hljs-comment">'the_geom'</span><span class="">]]</span>
 
-<span class="c1">#Adding a geometry column using shapeleys shape method. This enables the geodataframe to be manipulated and plotted. </span>
-<span class="n">road_corridors</span><span class="p">[</span><span class="s1">'geometry'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">shape</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">road_corridors</span><span class="p">[</span><span class="s1">'the_geom'</span><span class="p">]]</span>
-
-<span class="c1">#Setting coordinate reference system (CRS) for the format of the data (WGS84)</span>
-<span class="n">road_corridors</span><span class="o">.</span><span class="n">crs</span> <span class="o">=</span> <span class="s2">"EPSG:4326"</span>
-</pre>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="c1">#Getting the footpath data.</span>
-<span class="n">dataresource</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'5che-qtdy'</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">)</span> 
-
-<span class="c1"># Retrieve data from footpath corridors dataset.</span>
-<span class="n">footpath_corridors</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">dataresource</span><span class="p">)</span>
-
-<span class="c1">#Adding a geometry column using shapeleys shape method. This enables the geodataframe to be manipulated and plotted.</span>
-<span class="n">footpath_corridors</span><span class="p">[</span><span class="s1">'geometry'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">shape</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">footpath_corridors</span><span class="p">[</span><span class="s1">'the_geom'</span><span class="p">]]</span>
-
-<span class="c1">#Setting coordinate reference system (CRS) for the format of the data (WGS84)</span>
-<span class="n">footpath_corridors</span><span class="o">.</span><span class="n">crs</span> <span class="o">=</span> <span class="s2">"EPSG:4326"</span>
-</pre>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'fillColor'</span><span class="p">:</span> <span class="s1">'#228B22'</span><span class="p">,</span> <span class="s1">'color'</span><span class="p">:</span> <span class="s1">'#228B22'</span><span class="p">}</span>
+<span class="hljs-comment">#Setting coordinate reference system (CRS) for the format of the data (WGS84)</span>
+<span class="">footpath_corridors</span><span class="">.</span><span class="">crs</span> <span class="">=</span> <span class="hljs-string">"EPSG:4326"</span>
+<span class="">style</span> <span class="">=</span> <span class="">{</span><span class="hljs-comment">'fillColor'</span><span class="">:</span> <span class="hljs-comment">'#228B22'</span><span class="">,</span> <span class="hljs-comment">'color'</span><span class="">:</span> <span class="hljs-comment">'#228B22'</span><span class="">}</span>
 
 
-<span class="c1">#Create the base layer map (m)</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span>
-    <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">37.81368709240999</span><span class="p">,</span> <span class="mf">144.95738102347036</span><span class="p">],</span> <span class="c1">#Coordinates are in the Melbourne CBD block</span>
-    <span class="n">tiles</span><span class="o">=</span><span class="s2">"cartodbpositron"</span><span class="p">,</span>
-    <span class="n">zoom_start</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> 
-    <span class="n">control_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">prefer_canvas</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
-    <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> 
-    <span class="n">height</span><span class="o">=</span><span class="mi">580</span>
-<span class="p">)</span>
+<span class="hljs-comment">#Create the base layer map (m)</span>
+<span class="">m</span> <span class="">=</span> <span class="">folium</span><span class="">.</span><span class="">Map</span><span class="">(</span>
+    <span class="">location</span><span class="">=</span><span class="">[</span><span class="">-</span><span class="mf">37.81368709240999</span><span class="">,</span> <span class="mf">144.95738102347036</span><span class="">],</span> <span class="hljs-comment">#Coordinates are in the Melbourne CBD block</span>
+    <span class="">tiles</span><span class="">=</span><span class="hljs-string">"cartodbpositron"</span><span class="">,</span>
+    <span class="">zoom_start</span><span class="">=</span><span class="hljs-number">14</span><span class="">,</span> 
+    <span class="">control_scale</span><span class="">=</span><span class="kc">True</span><span class="">,</span>
+    <span class="">prefer_canvas</span><span class="">=</span><span class="kc">True</span><span class="">,</span> 
+    <span class="">width</span><span class="">=</span><span class="hljs-number">800</span><span class="">,</span> 
+    <span class="">height</span><span class="">=</span><span class="hljs-number">580</span>
+<span class="">)</span>
 
-<span class="c1">#Add the geoJSON layer which contains the roads.</span>
-<span class="n">folium</span><span class="o">.</span><span class="n">GeoJson</span><span class="p">(</span><span class="n">roadsGeoJSONURL</span><span class="p">,</span>
-               <span class="n">name</span><span class="o">=</span><span class="s2">"Roads"</span><span class="p">,</span> <span class="n">style_function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">style</span><span class="p">,</span>
-               <span class="n">tooltip</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">GeoJsonTooltip</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">'str_type'</span><span class="p">,</span><span class="s1">'seg_descr'</span><span class="p">,</span><span class="s1">'poly_area'</span><span class="p">],</span> 
-                                                      <span class="n">localize</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-
-
-<span class="c1">#Add the geoJSON layer which contains the footpaths.</span>
-<span class="n">folium</span><span class="o">.</span><span class="n">GeoJson</span><span class="p">(</span><span class="n">footpathsGeoJSONURL</span><span class="p">,</span>
-               <span class="n">name</span><span class="o">=</span><span class="s2">"Footpaths"</span><span class="p">,</span> 
-               <span class="n">tooltip</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">GeoJsonTooltip</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">'asset_type'</span><span class="p">],</span> 
-                                                      <span class="n">localize</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="hljs-comment">#Add the geoJSON layer which contains the roads.</span>
+<span class="">folium</span><span class="">.</span><span class="">GeoJson</span><span class="">(</span><span class="">roadsGeoJSONURL</span><span class="">,</span>
+               <span class="">name</span><span class="">=</span><span class="hljs-string">"Roads"</span><span class="">,</span> <span class="">style_function</span><span class="">=</span><span class="k">lambda</span> <span class="">x</span><span class="">:</span><span class="">style</span><span class="">,</span>
+               <span class="">tooltip</span><span class="">=</span><span class="">folium</span><span class="">.</span><span class="">features</span><span class="">.</span><span class="">GeoJsonTooltip</span><span class="">(</span><span class="">fields</span><span class="">=</span><span class="">[</span><span class="hljs-comment">'str_type'</span><span class="">,</span><span class="hljs-comment">'seg_descr'</span><span class="">,</span><span class="hljs-comment">'poly_area'</span><span class="">],</span> 
+                                                      <span class="">localize</span><span class="">=</span><span class="kc">True</span><span class="">))</span><span class="">.</span><span class="">add_to</span><span class="">(</span><span class="">m</span><span class="">)</span>
 
 
-<span class="c1"># Feature Group for potential locations layer.</span>
-<span class="n">pl</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">FeatureGroup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Sensor Locations"</span><span class="p">)</span>
+<span class="hljs-comment">#Add the geoJSON layer which contains the footpaths.</span>
+<span class="">folium</span><span class="">.</span><span class="">GeoJson</span><span class="">(</span><span class="">footpathsGeoJSONURL</span><span class="">,</span>
+               <span class="">name</span><span class="">=</span><span class="hljs-string">"Footpaths"</span><span class="">,</span> 
+               <span class="">tooltip</span><span class="">=</span><span class="">folium</span><span class="">.</span><span class="">features</span><span class="">.</span><span class="">GeoJsonTooltip</span><span class="">(</span><span class="">fields</span><span class="">=</span><span class="">[</span><span class="hljs-comment">'asset_type'</span><span class="">],</span> 
+                                                      <span class="">localize</span><span class="">=</span><span class="kc">True</span><span class="">))</span><span class="">.</span><span class="">add_to</span><span class="">(</span><span class="">m</span><span class="">)</span>
 
-<span class="c1"># Add potential locations and popup information (Location Number, Street View facing proposed area) to Feature Group.</span>
-<span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="n">sensor_locations</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span>
-        <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
-            <span class="n">location</span> <span class="o">=</span> <span class="p">[</span><span class="n">sensor</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">'latitude'</span><span class="p">],</span> <span class="n">sensor</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">'longitude'</span><span class="p">]],</span>
-            <span class="n">popup</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"&lt;b&gt;City&amp;nbspof&amp;nbspMelbourne&amp;nbspSensor&lt;/b&gt;&lt;br&gt;ID:&amp;nbsp;"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sensor</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">'site_id'</span><span class="p">])</span><span class="o">+</span><span class="s2">"&lt;br&gt;Address:&amp;nbsp"</span><span class="o">+</span><span class="n">sensor</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">'Address'</span><span class="p">]),</span>
-            <span class="n">icon</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Icon</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s1">'black'</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s2">"cloud"</span><span class="p">)</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
+
+<span class="hljs-comment"># Feature Group for potential locations layer.</span>
+<span class="">pl</span> <span class="">=</span> <span class="">folium</span><span class="">.</span><span class="">FeatureGroup</span><span class="">(</span><span class="">name</span><span class="">=</span><span class="hljs-string">"Sensor Locations"</span><span class="">)</span>
+
+<span class="hljs-comment"># Add potential locations and popup information (Location Number, Street View facing proposed area) to Feature Group.</span>
+<span class="k">for</span> <span class="">sensor</span> <span class="ow">in</span> <span class="">sensor_locations</span><span class="">.</span><span class="">iterrows</span><span class="">():</span>
+    <span class="">pl</span><span class="">.</span><span class="">add_child</span><span class="">(</span>
+        <span class="">folium</span><span class="">.</span><span class="">Marker</span><span class="">(</span>
+            <span class="">location</span> <span class="">=</span> <span class="">[</span><span class="">sensor</span><span class="">[</span><span class="hljs-number">1</span><span class="">][</span><span class="hljs-comment">'latitude'</span><span class="">],</span> <span class="">sensor</span><span class="">[</span><span class="hljs-number">1</span><span class="">][</span><span class="hljs-comment">'longitude'</span><span class="">]],</span>
+            <span class="">popup</span> <span class="">=</span> <span class="">(</span><span class="hljs-string">"&lt;b&gt;City&amp;nbspof&amp;nbspMelbourne&amp;nbspSensor&lt;/b&gt;&lt;br&gt;ID:&amp;nbsp;"</span> <span class="">+</span> <span class="nb">str</span><span class="">(</span><span class="">sensor</span><span class="">[</span><span class="hljs-number">1</span><span class="">][</span><span class="hljs-comment">'site_id'</span><span class="">])</span><span class="">+</span><span class="hljs-string">"&lt;br&gt;Address:&amp;nbsp"</span><span class="">+</span><span class="">sensor</span><span class="">[</span><span class="hljs-number">1</span><span class="">][</span><span class="hljs-comment">'Address'</span><span class="">]),</span>
+            <span class="">icon</span> <span class="">=</span> <span class="">folium</span><span class="">.</span><span class="">Icon</span><span class="">(</span><span class="">color</span> <span class="">=</span> <span class="hljs-comment">'black'</span><span class="">,</span> <span class="">icon</span><span class="">=</span><span class="hljs-string">"cloud"</span><span class="">)</span>
+        <span class="">)</span>
+    <span class="">)</span>
 
     
-<span class="c1"># Add potential locations feature group to map.</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span>
-<span class="n">folium</span><span class="o">.</span><span class="n">LayerControl</span><span class="p">()</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-<span class="c1">#Render the map</span>
-<span class="n">m</span>
-</pre>
-            </div>
+<span class="hljs-comment"># Add potential locations feature group to map.</span>
+<span class="">m</span><span class="">.</span><span class="">add_child</span><span class="">(</span><span class="">pl</span><span class="">)</span>
+<span class="">folium</span><span class="">.</span><span class="">LayerControl</span><span class="">()</span><span class="">.</span><span class="">add_to</span><span class="">(</span><span class="">m</span><span class="">)</span>
+<span class="hljs-comment">#Render the map</span>
+<span class="">m</span>
 
-          </div>
+</code></pre>
+          </figure>
         </div>
       </div>
     </div>
-
   </div>
+
+</div>
+
+
   <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
     <div class="jp-Cell-inputWrapper">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -20592,37 +20526,59 @@ all of MD as it is not optimized for dense, information rich UIs.
     </div>
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
+  <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
       </div>
       <div class="jp-InputArea jp-Cell-inputArea">
         <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
         <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="c1">#Creating CBD polygon.</span>
-<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Polygon</span>
+          <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+            <span class="">Python</span>
+          </div>
+          <div class="cm-s-jupyter">
+            <figure class="highlight">
+              <pre><code class="language-python hljs" data-lang="python">
+  
+  <span class="hljs-comment">#Creating CBD polygon.</span>
+  <span class="hljs-keyword">from</span> <span class="">shapely.geometry</span> <span class="hljs-keyword">import</span> <span class="">Polygon</span>
+  
+  <span class="">lon_point_list</span> <span class="">=</span> <span class="">[</span><span class="mf">144.944077</span><span class="">,</span> <span class="mf">144.970996</span><span class="">,</span> <span class="mf">144.975450</span><span class="">,</span> <span class="mf">144.948066</span><span class="">]</span>
+  <span class="">lat_point_list</span> <span class="">=</span> <span class="">[</span><span class="">-</span><span class="mf">37.813788</span><span class="">,</span><span class="">-</span><span class="mf">37.807214</span><span class="">,</span><span class="">-</span><span class="mf">37.815545</span><span class="">,</span><span class="">-</span><span class="mf">37.822770</span><span class="">]</span>
+  
+  <span class="">cbd_geom</span> <span class="">=</span> <span class="">Polygon</span><span class="">(</span><span class="nb">zip</span><span class="">(</span><span class="">lon_point_list</span><span class="">,</span> <span class="">lat_point_list</span><span class="">))</span>
+  <span class="">crs</span> <span class="">=</span> <span class="">{</span><span class="hljs-comment">'init'</span><span class="">:</span> <span class="hljs-comment">'epsg:4326'</span><span class="">}</span>
+  <span class="">cbdBoundary</span> <span class="">=</span> <span class="">gpd</span><span class="">.</span><span class="">GeoDataFrame</span><span class="">(</span><span class="">index</span><span class="">=</span><span class="">[</span><span class="hljs-number">0</span><span class="">],</span> <span class="">crs</span><span class="">=</span><span class="">crs</span><span class="">,</span> <span class="">geometry</span><span class="">=</span><span class="">[</span><span class="">cbd_geom</span><span class="">])</span>   
+  
+  <span class="">cbdBoundary</span> <span class="">=</span> <span class="">cbdBoundary</span><span class="">.</span><span class="">to_crs</span><span class="">(</span><span class="">epsg</span><span class="">=</span><span class="hljs-number">4326</span><span class="">)</span>
+  
+  
+  <span class="hljs-comment">#Clipping canopy data to only the Melbourne CBD.</span>
+  <span class="">cbdRoads</span> <span class="">=</span> <span class="">road_corridors</span><span class="">.</span><span class="">overlay</span><span class="">(</span><span class="">cbdBoundary</span><span class="">,</span> <span class="">how</span><span class="">=</span><span class="hljs-comment">'intersection'</span><span class="">)</span>
+  <span class="">cbdFootpaths</span> <span class="">=</span> <span class="">footpath_corridors</span><span class="">.</span><span class="">overlay</span><span class="">(</span><span class="">cbdBoundary</span><span class="">,</span> <span class="">how</span><span class="">=</span><span class="hljs-comment">'intersection'</span><span class="">)</span>
+  <span class="hljs-comment">#Calling plot on the geodataframes is a good way to check that we've created what we wanted to! The visualisations below show that we've done the right thing.</span>
+  <span class="">cbdRoads</span><span class="">.</span><span class="">plot</span><span class="">()</span>
+  <span class="">cbdFootpaths</span><span class="">.</span><span class="">plot</span><span class="">()</span>
+  
+  <span class="">cbdRoads</span><span class="">.</span><span class="">to_file</span><span class="">(</span><span
+    class="hljs-comment">'roads.shp'</span><span class="">)</span>
+  <span class="hljs-comment"># IdealTotalSensors = cbdRoads['poly_area'].sum()</span>
+  <span class="hljs-comment"># print("The ideal total number of sensors around the Melbourne CBD is approximately : " + IdealTotalSensors)</span>
 
-<span class="n">lon_point_list</span> <span class="o">=</span> <span class="p">[</span><span class="mf">144.944077</span><span class="p">,</span> <span class="mf">144.970996</span><span class="p">,</span> <span class="mf">144.975450</span><span class="p">,</span> <span class="mf">144.948066</span><span class="p">]</span>
-<span class="n">lat_point_list</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">37.813788</span><span class="p">,</span><span class="o">-</span><span class="mf">37.807214</span><span class="p">,</span><span class="o">-</span><span class="mf">37.815545</span><span class="p">,</span><span class="o">-</span><span class="mf">37.822770</span><span class="p">]</span>
 
-<span class="n">cbd_geom</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">lon_point_list</span><span class="p">,</span> <span class="n">lat_point_list</span><span class="p">))</span>
-<span class="n">crs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'init'</span><span class="p">:</span> <span class="s1">'epsg:4326'</span><span class="p">}</span>
-<span class="n">cbdBoundary</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">crs</span><span class="o">=</span><span class="n">crs</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="p">[</span><span class="n">cbd_geom</span><span class="p">])</span>   
-
-<span class="n">cbdBoundary</span> <span class="o">=</span> <span class="n">cbdBoundary</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span>
-
-
-<span class="c1">#Clipping canopy data to only the Melbourne CBD.</span>
-<span class="n">cbdRoads</span> <span class="o">=</span> <span class="n">road_corridors</span><span class="o">.</span><span class="n">overlay</span><span class="p">(</span><span class="n">cbdBoundary</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'intersection'</span><span class="p">)</span>
-<span class="n">cbdFootpaths</span> <span class="o">=</span> <span class="n">footpath_corridors</span><span class="o">.</span><span class="n">overlay</span><span class="p">(</span><span class="n">cbdBoundary</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'intersection'</span><span class="p">)</span>
-</pre>
-            </div>
-
+</code></pre>
+            </figure>
           </div>
         </div>
       </div>
     </div>
+  
+  </div>
+
+
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+ 
 
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -20634,33 +20590,21 @@ all of MD as it is not optimized for dense, information rich UIs.
         <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
           <div class="CodeMirror cm-s-jupyter">
             <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="c1">#Calling plot on the geodataframes is a good way to check that we've created what we wanted to! The visualisations below show that we've done the right thing.</span>
-
-<span class="n">cbdRoads</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">cbdFootpaths</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-
-<span class="n">cbdRoads</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s1">'roads.shp'</span><span class="p">)</span>
-<span class="c1"># IdealTotalSensors = cbdRoads['poly_area'].sum()</span>
-<span class="c1"># print("The ideal total number of sensors around the Melbourne CBD is approximately : " + IdealTotalSensors)</span>
-</pre>
+            <div class="jp-Cell-inputWrapper">
+              <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+              </div>
+              <div class="jp-InputArea jp-Cell-inputArea">
+                <div class="jp-InputPrompt jp-InputArea-prompt">
+                </div>
+                <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+                  <p style="font-family: helvetica,arial,sans-serif; font-size:1.6em;color:white; background-color: black">
+                    &emsp;<b>cbdRoads</b>
+            
+                  </p>
+                </div>
+              </div>
             </div>
 
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="n">cbdRoads</span>
 </pre>
             </div>
 
@@ -20688,22 +20632,28 @@ all of MD as it is not optimized for dense, information rich UIs.
     </div>
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
+  <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
       </div>
       <div class="jp-InputArea jp-Cell-inputArea">
         <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
         <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"The total road area for the Melbourne CBD is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">cbdRoads</span><span class="p">[</span><span class="s1">'poly_area'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">+</span> <span class="s2">" square metres."</span><span class="p">)</span>   
-</pre>
-            </div>
-
+          <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+            <span class="">Python</span>
+          </div>
+          <div class="cm-s-jupyter">
+            <figure class="highlight">
+              <pre><code class="language-python hljs" data-lang="python">
+   <span class="nb">print</span><span class="">(</span><span class="hljs-string">"The total road area for the Melbourne CBD is "</span> <span class="">+</span> <span class="nb">str</span><span class="">(</span><span class="">cbdRoads</span><span class="">[</span><span class="hljs-comment">'poly_area'</span><span class="">]</span><span class="">.</span><span class="">astype</span><span class="">(</span><span class="nb">int</span><span class="">)</span><span class="">.</span><span class="">sum</span><span class="">())</span> <span class="">+</span> <span class="hljs-string">" square metres."</span><span class="">)</span> </code></pre>
+            </figure>
           </div>
         </div>
       </div>
     </div>
+  
+  </div>
+
 
   </div>
   <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -20723,22 +20673,29 @@ all of MD as it is not optimized for dense, information rich UIs.
     </div>
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="n">cbdFootpaths</span><span class="p">[</span><span class="s1">'area'</span><span class="p">]</span> <span class="o">=</span> <span class="n">cbdFootpaths</span><span class="p">[</span><span class="s1">'geometry'</span><span class="p">]</span><span class="o">.</span><span class="n">area</span>
-</pre>
-            </div>
-
-          </div>
+<div class="jp-Cell-inputWrapper">
+  <div class="jp-InputArea jp-Cell-inputArea">
+    <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+    </div>
+    <div class="jp-InputArea jp-Cell-inputArea">
+      <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+          <span class="">Python</span>
+        </div>
+        <div class="cm-s-jupyter">
+          <figure class="highlight">
+            <pre><code class="language-python hljs" data-lang="python">
+  <span class="">cbdFootpaths</span><span class="">[</span><span class="hljs-comment">'area'</span><span class="">]</span> <span class="">=</span> <span class="">cbdFootpaths</span><span class="">[</span><span class="hljs-comment">'geometry'</span><span class="">]</span><span class="">.</span><span class="">area</span>
+</code></pre>
+          </figure>
         </div>
       </div>
     </div>
+  </div>
+
+</div>
+
 
   </div>
   <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -20758,46 +20715,41 @@ all of MD as it is not optimized for dense, information rich UIs.
     </div>
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="n">cbdFootpaths</span><span class="p">[</span><span class="s1">'area'</span><span class="p">]</span> <span class="o">=</span> <span class="n">cbdFootpaths</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="mi">28355</span><span class="p">)[</span><span class="s1">'geometry'</span><span class="p">]</span><span class="o">.</span><span class="n">area</span>
+<div class="jp-Cell-inputWrapper">
+  <div class="jp-InputArea jp-Cell-inputArea">
+    <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+    </div>
+    <div class="jp-InputArea jp-Cell-inputArea">
+      <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+          <span class="">Python</span>
+        </div>
+        <div class="cm-s-jupyter">
+          <figure class="highlight">
+            <pre><code class="language-python hljs" data-lang="python">
+<span class="">cbdFootpaths</span><span class="">[</span><span class="hljs-comment">'area'</span><span class="">]</span> <span class="">=</span> <span class="">cbdFootpaths</span><span class="">.</span><span class="">to_crs</span><span class="">(</span><span class="hljs-number">28355</span><span class="">)[</span><span class="hljs-comment">'geometry'</span><span class="">]</span><span class="">.</span><span class="">area</span>
 
-<span class="c1">#Using to_crs in this line of code doesn't change the default setting for the dataframe. It only uses it for this one calculation.</span>
-</pre>
-            </div>
+<span class="hljs-comment">#Using to_crs in this line of code doesn't change the default setting for the dataframe. It only uses it for this one calculation.</span>
+<span class="">footpatharea</span> <span class="">=</span> <span class="">cbdFootpaths</span><span class="">[</span><span class="hljs-comment">'area'</span><span class="">]</span><span class="">.</span><span class="">astype</span><span class="">(</span><span class="nb">int</span><span class="">)</span><span class="">.</span><span class="">sum</span><span class="">()</span>
+<span class="nb">print</span><span class="">(</span><span class="hljs-string">"The total footpath area for the Melbourne CBD is "</span> <span class="">+</span> <span class="nb">str</span><span class="">(</span><span class="">footpatharea</span><span class="">)</span> <span class="">+</span> <span class="hljs-string">" square metres."</span><span class="">)</span>
+<span class="">footpatharea</span> <span class="">=</span> <span class="">cbdFootpaths</span><span
+  class="">[</span><span class="hljs-comment">'area'</span><span class="">]</span><span class="">.</span><span
+  class="">astype</span><span class="">(</span><span class="nb">int</span><span class="">)</span><span
+  class="">.</span><span class="">sum</span><span class="">()</span>
+<span class="nb">print</span><span class="">(</span><span class="hljs-string">"The total footpath area for the MelbourneCBD is "</span> <span class="">+</span> <span class="nb">str</span><span class="">(</span><span
+  class="">footpatharea</span><span class="">)</span> <span class="">+</span> <span class="hljs-string">" squaremetres."</span><span class="">)</span>
 
-          </div>
+</code></pre>
+          </figure>
         </div>
       </div>
     </div>
+  </div>
 
+</div>
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="n">footpatharea</span> <span class="o">=</span> <span class="n">cbdFootpaths</span><span class="p">[</span><span class="s1">'area'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The total footpath area for the Melbourne CBD is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">footpatharea</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" square metres."</span><span class="p">)</span>
-</pre>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
   <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
     <div class="jp-Cell-inputWrapper">
@@ -20823,28 +20775,32 @@ all of MD as it is not optimized for dense, information rich UIs.
             Heathrow airport. For this use case, we will aim to model one sensor for every 150 square metres of
             Melbourne CBD footpath.</p>
           <br>
-
-        </div>
+     </div>
       </div>
     </div>
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
+  <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
       </div>
       <div class="jp-InputArea jp-Cell-inputArea">
         <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
         <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"The total number of environmental sensors required for the Melbourne CBD is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">footpatharea</span><span class="o">/</span><span class="mi">150</span><span class="p">))</span>
-</pre>
-            </div>
-
+          <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+            <span class="">Python</span>
+          </div>
+          <div class="cm-s-jupyter">
+            <figure class="highlight">
+              <pre><code class="language-python hljs" data-lang="python">
+  <span class="nb">print</span><span class="">(</span><span class="hljs-string">"The total number of environmental sensors required for the Melbourne CBD is "</span> <span class="">+</span> <span class="nb">str</span><span class="">(</span><span class="">footpatharea</span><span class="">/</span><span class="hljs-number">150</span><span class="">))</span></code></pre>
+            </figure>
           </div>
         </div>
       </div>
     </div>
+    </div>
+
 
   </div>
   <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -20865,42 +20821,29 @@ all of MD as it is not optimized for dense, information rich UIs.
     </div>
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
-      <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-      </div>
-      <div class="jp-InputArea jp-Cell-inputArea">
-        <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-        <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="n">idealSensorNetwork</span> <span class="o">=</span> <span class="n">cbdFootpaths</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="mi">28355</span><span class="p">)</span><span class="o">.</span><span class="n">centroid</span>
-</pre>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
+  <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
       </div>
       <div class="jp-InputArea jp-Cell-inputArea">
         <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
         <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="n">idealSensorNetwork</span>
-</pre>
-            </div>
-
+          <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+            <span class="">Python</span>
+          </div>
+        <div class="cm-s-jupyter">
+          <figure class="highlight">
+            <pre><code class="language-python hljs" data-lang="python">
+  <span class="">idealSensorNetwork</span> <span class="">=</span> <span class="">cbdFootpaths</span><span class="">.</span><span class="">to_crs</span><span class="">(</span><span class="hljs-number">28355</span><span class="">)</span><span class="">.</span><span class="">centroid</span>
+  <span class="">idealSensorNetwork</span>
+  </code></pre>
+            </figure>
           </div>
         </div>
       </div>
     </div>
-
+  
   </div>
   <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
     <div class="jp-Cell-inputWrapper">
@@ -20921,38 +20864,42 @@ all of MD as it is not optimized for dense, information rich UIs.
     </div>
   </div>
   <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-    <div class="jp-Cell-inputWrapper">
+  <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
       <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
       </div>
       <div class="jp-InputArea jp-Cell-inputArea">
         <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
         <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-          <div class="CodeMirror cm-s-jupyter">
-            <div class=" highlight hl-ipython3">
-              <pre><span></span><span class="c1"># Create a geometry list from the GeoDataFrame</span>
-<span class="n">ideal_network_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">point</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">point</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">idealSensorNetwork</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="mi">4326</span><span class="p">)</span><span class="o">.</span><span class="n">geometry</span> <span class="p">]</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">37.81368709240999</span><span class="p">,</span> <span class="mf">144.95738102347036</span><span class="p">],</span> <span class="n">tiles</span> <span class="o">=</span> <span class="s1">'CartoDB positron'</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>  <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
-
-<span class="c1"># Iterate through list and add a marker for each sensor.</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">coordinates</span> <span class="ow">in</span> <span class="n">ideal_network_list</span><span class="p">:</span>
+          <div class="snippet-language"><span class="icon"><i class="fab fa-python"></i></span>
+            <span class="">Python</span>
+          </div>
+          <div class="cm-s-jupyter">
+            <figure class="highlight">
+              <pre><code class="language-python hljs" data-lang="python">
+  <span class="hljs-comment"># Create a geometry list from the GeoDataFrame</span>
+  <span class="">ideal_network_list</span> <span class="">=</span> <span class="">[[</span><span class="">point</span><span class="">.</span><span class="">xy</span><span class="">[</span><span class="hljs-number">1</span><span class="">][</span><span class="hljs-number">0</span><span class="">],</span> <span class="">point</span><span class="">.</span><span class="">xy</span><span class="">[</span><span class="hljs-number">0</span><span class="">][</span><span class="hljs-number">0</span><span class="">]]</span> <span class="k">for</span> <span class="">point</span> <span class="ow">in</span> <span class="">idealSensorNetwork</span><span class="">.</span><span class="">to_crs</span><span class="">(</span><span class="hljs-number">4326</span><span class="">)</span><span class="">.</span><span class="">geometry</span> <span class="">]</span>
   
-    <span class="n">m</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">folium</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">"black"</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                            <span class="n">popup</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"&lt;b&gt;Proposed&amp;nbspEnvironmental&amp;nbspSensor&lt;/b&gt;&lt;br&gt;Coordinates: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ideal_network_list</span><span class="p">[</span><span class="n">i</span><span class="p">]))))</span>
-                            
-    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="">f</span> <span class="">=</span> <span class="">folium</span><span class="">.</span><span class="">Figure</span><span class="">(</span><span class="">width</span><span class="">=</span><span class="hljs-number">800</span><span class="">,</span> <span class="">height</span><span class="">=</span><span class="hljs-number">600</span><span class="">)</span>
+  <span class="">m</span> <span class="">=</span> <span class="">folium</span><span class="">.</span><span class="">Map</span><span class="">(</span><span class="">location</span><span class="">=</span><span class="">[</span><span class="">-</span><span class="mf">37.81368709240999</span><span class="">,</span> <span class="mf">144.95738102347036</span><span class="">],</span> <span class="">tiles</span> <span class="">=</span> <span class="hljs-comment">'CartoDB positron'</span><span class="">,</span> <span class="">zoom_start</span><span class="">=</span><span class="hljs-number">14</span><span class="">,</span>  <span class="">width</span><span class="">=</span><span class="hljs-number">800</span><span class="">,</span> <span class="">height</span><span class="">=</span><span class="hljs-number">600</span><span class="">)</span>
+  
+  <span class="hljs-comment"># Iterate through list and add a marker for each sensor.</span>
+  <span class="">i</span> <span class="">=</span> <span class="hljs-number">0</span>
+  <span class="k">for</span> <span class="">coordinates</span> <span class="ow">in</span> <span class="">ideal_network_list</span><span class="">:</span>
     
-<span class="n">m</span>
-</pre>
-            </div>
-
+      <span class="">m</span><span class="">.</span><span class="">add_child</span><span class="">(</span><span class="">folium</span><span class="">.</span><span class="">Circle</span><span class="">(</span><span class="">location</span> <span class="">=</span> <span class="">coordinates</span><span class="">,</span> <span class="">radius</span> <span class="">=</span> <span class="hljs-number">5</span><span class="">,</span> <span class="">color</span> <span class="">=</span> <span class="hljs-string">"black"</span><span class="">,</span> <span class="">fill</span> <span class="">=</span> <span class="kc">False</span><span class="">,</span>
+                              <span class="">popup</span> <span class="">=</span> <span class="">(</span><span class="hljs-string">"&lt;b&gt;Proposed&amp;nbspEnvironmental&amp;nbspSensor&lt;/b&gt;&lt;br&gt;Coordinates: "</span> <span class="">+</span> <span class="nb">str</span><span class="">(</span><span class="">ideal_network_list</span><span class="">[</span><span class="">i</span><span class="">]))))</span>
+                              
+      <span class="">i</span> <span class="">=</span> <span class="">i</span> <span class="">+</span> <span class="hljs-number">1</span>
+      
+  <span class="">m</span>
+  </code></pre>
+            </figure>
           </div>
         </div>
       </div>
     </div>
-
+   </div>
   </div>
   <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
     <div class="jp-Cell-inputWrapper">
